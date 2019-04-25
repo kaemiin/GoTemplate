@@ -1,0 +1,6 @@
+{
+	"ImportPath": "kaemiin.com/user/stringutil",
+	"GoVersion": "go1.12",
+	"GodepVersion": "v80",
+	"Deps": []
+}
