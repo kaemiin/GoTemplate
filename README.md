@@ -3,7 +3,7 @@
 #### DEVELOP ON DOCKER
 
 ```
-docker run -it -d -v $(pwd):/go --name go-template golang bash
+docker run -it -d -v $(pwd):/go --name go-template --link mysql:mysql --link redis:redis golang bash
 
 docker exec -it go-template bash
 ```
@@ -15,6 +15,9 @@ go get -u -v github.com/tools/godep
 go get -u golang.org/x/lint/golint
 go get github.com/joho/godotenv
 go get github.com/astaxie/beego
+go get github.com/jasonlvhit/gocron
+go get github.com/go-sql-driver/mysql
+go get gopkg.in/natefinch/lumberjack.v2
 ```
 
 #### BUILD & INSTALL
@@ -48,6 +51,12 @@ or
 
 ```
 hello
+```
+
+or
+
+```
+go run src/kaemiin.com/user/app/*.go
 ```
 
 #### LINT
@@ -96,7 +105,25 @@ update a dependency:
 #### RUN ON DOCKER ?
 
 ```
-docker build --rm -t kaemiin-golang .
+cd ./src/kaemiin.com/user/beeserver
 
-docker run -it -d -p 8080:9090 --name go-server kaemiin-golang bash
+docker build --rm -t beeserver-test .
+
+docker run -it -d -p 8080:9090 --name bee-server beeserver-test bash
+```
+
+```
+docker build --rm -t go-test .
+
+docker run -it -d --name go-test go-test bash
+
+docker exec -it go-test bash
+
+rm /etc/localtime
+
+echo "Asia/Taipei" > /etc/timezone
+
+exit
+
+docker cp /usr/share/zoneinfo/Asia/Taipei go-test:/etc/localtime
 ```
