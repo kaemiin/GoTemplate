@@ -68,7 +68,7 @@ golint kaemiin.com/user/hello
 ### TEST
 
 ```
-go test kaemiin.com/user/stringutil
+go test kaemiin.com/user/testing
 ```
 
 ### FORMATTING
@@ -102,7 +102,7 @@ update a dependency:
 2. godep update foo/bar
 ```
 
-#### RUN ON DOCKER ?
+#### RUN ON DOCKER
 
 ```
 cd ./src/kaemiin.com/user/beeserver
