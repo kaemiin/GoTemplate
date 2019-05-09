@@ -18,6 +18,7 @@ go get github.com/astaxie/beego
 go get github.com/jasonlvhit/gocron
 go get github.com/go-sql-driver/mysql
 go get gopkg.in/natefinch/lumberjack.v2
+go get github.com/go-redis/redis
 ```
 
 #### BUILD & INSTALL
