@@ -69,6 +69,10 @@ golint kaemiin.com/user/hello
 
 ```
 go test kaemiin.com/user/testing
+
+go test -cover kaemiin.com/user/testing
+
+go test -v -bench=. kaemiin.com/user/testing
 ```
 
 ### FORMATTING
