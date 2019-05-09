@@ -32,7 +32,7 @@ func init() {
 	}
 }
 
-func send(subject string, body string, email string) (err error)	 {
+func send(subject string, body string, email string) (err error) {
 	defer func() {
 		if r := recover(); r != nil {
 		   err = r.(error)
